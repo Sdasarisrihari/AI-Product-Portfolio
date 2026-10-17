@@ -1,4 +1,5 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { useState } from "react";
 import { ArrowDown, ArrowUpRight, ArrowDownRight } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -83,6 +84,8 @@ function SectionHead({ n, label, right, title }: { n: string; label: string; rig
 }
 
 function Index() {
+  const [filter, setFilter] = useState("All");
+  const showClaims = filter === "All" || ["AI Products", "Business Analysis", "Product Management", "Insurance"].includes(filter);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="flex justify-between bg-primary px-10 py-2 font-mono text-[10px] tracking-[0.14em] text-primary-foreground">
@@ -91,14 +94,17 @@ function Index() {
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
           <a href="#home" className="font-display text-3xl">SD<span className="text-accent">•</span></a>
-          <nav className="hidden gap-10 text-sm md:flex">
+          <nav aria-label="Primary" className="hidden gap-10 text-sm md:flex">
             {nav.map((n) => <a key={n} href={`#${n.toLowerCase()}`} className="hover:text-accent">{n}</a>)}
           </nav>
           <div className="flex items-center gap-6 text-sm">
-            <a href="#" className="hidden items-center gap-1 sm:flex">Download Resume <ArrowUpRight size={14} /></a>
+            <a href="mailto:sdasari1229@gmail.com?subject=Resume%20request" className="hidden items-center gap-1 sm:flex">Request Resume <ArrowUpRight size={14} /></a>
             <a href="#projects" className="flex items-center gap-2 bg-primary px-4 py-3 text-xs text-primary-foreground">View Projects <ArrowDownRight size={14} /></a>
           </div>
         </div>
+        <nav aria-label="Sections" className="flex gap-5 overflow-x-auto border-t border-border px-6 py-2 text-xs md:hidden">
+          {nav.map((n) => <a key={n} href={`#${n.toLowerCase()}`}>{n}</a>)}
+        </nav>
       </header>
 
       <section id="home" className="mx-auto max-w-[1200px] px-6 pt-24">
@@ -109,7 +115,7 @@ function Index() {
             <p className="mt-8 max-w-xl text-muted-foreground leading-relaxed">Business Analyst specializing in P&C insurance, workflow optimization, and applied AI. I bridge business requirements, product thinking, and hands-on prototyping to build solutions that solve real operational problems.</p>
             <div className="mt-8 flex items-center gap-6">
               <a href="#projects" className="flex items-center gap-6 bg-primary px-5 py-4 text-sm text-primary-foreground">Explore My Work <ArrowDown size={16} /></a>
-              <a href="#" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Download Resume <ArrowUpRight size={14} /></a>
+              <a href="mailto:sdasari1229@gmail.com?subject=Resume%20request" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Request Resume <ArrowUpRight size={14} /></a>
             </div>
           </div>
           <div className="relative aspect-[6/5] border border-border bg-card">
@@ -185,8 +191,8 @@ function Index() {
       <section id="projects" className="mx-auto max-w-[1200px] px-6 py-28">
         <SectionHead n="03" label="Selected work" right="One flagship concept · No fabricated client work" title="Projects with a point of view." />
         <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">A close look at an insurance workflow problem—and a deliberately bounded AI product response.</p>
-        <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f, i) => <span key={f} className={`border px-3 py-1.5 text-xs ${i === 0 ? "border-primary bg-primary text-primary-foreground" : "border-border"}`}>{f}</span>)}</div>
-        <div id="case-study" className="grid gap-10 border border-border md:grid-cols-2">
+        <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)} className={`border px-3 py-1.5 text-xs transition-colors ${filter === f ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"}`}>{f}</button>)}</div>
+        {showClaims && <div id="case-study" className="grid gap-10 border border-border md:grid-cols-2">
           <div className="relative bg-card p-8">
             <p className="eyebrow">Concept / 2026 · Interactive prototype built</p>
             <div className="mt-8 border border-border bg-background p-6">
@@ -198,15 +204,16 @@ function Index() {
             <p className="eyebrow mt-4">Synthetic interface study · Not a live product</p>
           </div>
           <div className="p-8">
-            <p className="eyebrow">AI Product Management / Insurance Workflow Automation · 2026</p>
+            <p className="eyebrow">Independent Project | AI Product Prototype | 2026</p>
+            <p className="eyebrow mt-2">AI Product Management / Insurance Workflow Automation</p>
             <h3 className="mt-4 text-5xl">AI Insurance Claims Assistant</h3>
-            <p className="mt-5 leading-relaxed text-muted-foreground">An AI-assisted claims workflow designed to extract structured information from claim documents, display confidence scores, identify missing information, and answer handlers’ policy questions using cited source passages.</p>
+            <p className="mt-5 leading-relaxed text-muted-foreground">An AI-assisted claims workflow designed to extract structured information from claim documents, highlight missing fields, display extraction confidence, and answer policy questions using cited source passages.</p>
             <p className="mt-5 font-mono text-[11px] text-accent">Interactive Floot prototype built · MVP capabilities unverified</p>
             <div className="mt-5 flex flex-wrap gap-2">{["AI Products", "Business Analysis", "Product Management", "Insurance"].map((t) => <Chip key={t}>{t}</Chip>)}</div>
-            <a href="#case-study" className="mt-8 inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></a>
+            <Link to="/case-study" className="mt-8 inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></Link>
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes. A stable public preview URL is not configured.</p>
           </div>
-        </div>
+        </div>}
       </section>
 
       <section id="skills" className="border-t border-border bg-card">
