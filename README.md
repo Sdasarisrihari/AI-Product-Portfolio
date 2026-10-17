@@ -1,32 +1,25 @@
-# AI Product Portfolio
+# [Srihari-Dasari-AI-Product-Portfolio]
 
-My personal portfolio showcasing my experience in Business Analysis, P&C Insurance, Product Management, and Applied AI.
+An interactive AI product portfolio built with Lovable, showcasing projects through a modern and engaging interface.
 
 ## About
 
-I focus on translating business problems into practical solutions through business analysis, product thinking, workflow optimization, and AI prototyping.
+This portfolio highlights my interests in Business Analysis, Product Management, and Applied AI through a clean, user-friendly design.
 
-## Featured Project
+## Features
 
-**AI Insurance Claims Assistant**
+- Modern, responsive user interface
+- Interactive project showcase
+- Clean and intuitive design
+- Built with Lovable
 
-An AI-assisted insurance workflow designed to extract structured information from claim documents, identify missing fields, and answer policy questions with supporting citations.
+## Tech Stack
 
-## Skills
-
-- Business Analysis & Requirements Engineering
-- P&C Insurance & Guidewire
-- SQL, APIs & Systems Integration
-- Product Management & Agile Delivery
-- LLMs, Prompt Engineering & RAG
-- Workflow Automation & AI Prototyping
-
-## Technologies
-
-Technologies and tools are selected based on project requirements and implementation status.
+- Lovable
+- Frontend technologies used in the project
 
 ## Contact
 
 - **Email:** [Sdasari1229@gmail.com](mailto:Sdasari1229@gmail.com)
 
-Thanks for visiting my portfolio!
+Thanks for checking out my project!
