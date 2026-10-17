@@ -2,8 +2,6 @@
 
 My personal portfolio showcasing my experience in Business Analysis, P&C Insurance, Product Management, and Applied AI.
 
-🌐 **Live Website:** [View My Portfolio](https://srihari-dasari-ai-product-portfolio--sriharidasari9.replit.app/)
-
 ## About
 
 I focus on translating business problems into practical solutions through business analysis, product thinking, workflow optimization, and AI prototyping.
@@ -29,6 +27,6 @@ Technologies and tools are selected based on project requirements and implementa
 
 ## Contact
 
-- **Portfolio:** [srihari-dasari-ai-product-portfolio](https://srihari-dasari-ai-product-portfolio--sriharidasari9.replit.app/)
+- **Email:** [Sdasari1229@gmail.com](mailto:Sdasari1229@gmail.com)
 
 Thanks for visiting my portfolio!
