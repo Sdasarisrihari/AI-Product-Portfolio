@@ -1,4 +1,4 @@
-# [Srihari-Dasari-AI-Product-Portfolio]
+# Srihari-Dasari-AI-Product-Portfolio
 
 An interactive AI product portfolio built with Lovable, showcasing projects through a modern and engaging interface.
 
