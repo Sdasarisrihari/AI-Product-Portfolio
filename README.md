@@ -1,24 +1,34 @@
-# Orbit Showcase Ai
+# AI Product Portfolio
 
-Create exactly same as this - https://srihari-dasari-ai-product-portfolio--sriharidasari9.replit.app/
+My personal portfolio showcasing my experience in Business Analysis, P&C Insurance, Product Management, and Applied AI.
 
-This project was built with [Lovable](https://lovable.dev).
+🌐 **Live Website:** [View My Portfolio](https://srihari-dasari-ai-product-portfolio--sriharidasari9.replit.app/)
 
-## Build with Lovable
+## About
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/284c5f92-9088-418b-86cf-979f8ae1bc4b).
+I focus on translating business problems into practical solutions through business analysis, product thinking, workflow optimization, and AI prototyping.
 
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+## Featured Project
 
-## Development
+**AI Insurance Claims Assistant**
 
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+An AI-assisted insurance workflow designed to extract structured information from claim documents, identify missing fields, and answer policy questions with supporting citations.
 
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
-npm run dev
-```
+## Skills
+
+- Business Analysis & Requirements Engineering
+- P&C Insurance & Guidewire
+- SQL, APIs & Systems Integration
+- Product Management & Agile Delivery
+- LLMs, Prompt Engineering & RAG
+- Workflow Automation & AI Prototyping
+
+## Technologies
+
+Technologies and tools are selected based on project requirements and implementation status.
+
+## Contact
+
+- **Portfolio:** [srihari-dasari-ai-product-portfolio](https://srihari-dasari-ai-product-portfolio--sriharidasari9.replit.app/)
+
+Thanks for visiting my portfolio!
