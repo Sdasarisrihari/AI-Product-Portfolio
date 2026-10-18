@@ -195,7 +195,7 @@ function Index() {
         <SectionHead n="03" label="Selected work" right="One flagship concept · No fabricated client work" title="Projects with a point of view." />
         <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Close looks at insurance workflow problems—and deliberately bounded AI product responses.</p>
         <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)} className={`border px-3 py-1.5 text-xs transition-colors ${filter === f ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"}`}>{f}</button>)}</div>
-        {showClaims && <div className="mt-10 grid gap-10 border border-border md:grid-cols-2">
+        {showClaims && <div className="grid gap-10 border border-border md:grid-cols-2">
           <div className="relative bg-card p-8">
             <p className="eyebrow">Live prototype / 2026 · Synthetic-data MVP</p>
             <div className="mt-8 border border-border bg-background p-6">
