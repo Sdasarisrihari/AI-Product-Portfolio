@@ -8,3 +8,8 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+## Portfolio architecture
+- Keep document pointers, project identity, reported QA, and planned evaluation values in `src/lib/claims-project.ts`; sharing one evidence model prevents the portfolio and case study from contradicting each other.
+- Reuse `ProjectDocuments` for original PDF actions and `ClaimsArchitecture` for the documented system diagram; neither module implements or changes the external prototype.
+- Keep `/case-study` as the single flagship project detail route; replace its content rather than creating duplicate project pages.
