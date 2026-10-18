@@ -192,35 +192,9 @@ function Index() {
       </section>
 
       <section id="projects" className="mx-auto max-w-[1200px] px-6 py-28">
-        <SectionHead n="03" label="Selected work" right="Two flagship concepts · No fabricated client work" title="Projects with a point of view." />
+        <SectionHead n="03" label="Selected work" right="One flagship concept · No fabricated client work" title="Projects with a point of view." />
         <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Close looks at insurance workflow problems—and deliberately bounded AI product responses.</p>
         <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)} className={`border px-3 py-1.5 text-xs transition-colors ${filter === f ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"}`}>{f}</button>)}</div>
-        {showClaims && <div id="case-study" className="grid gap-10 border border-border md:grid-cols-2">
-          <div className="relative bg-card p-8">
-            <p className="eyebrow">Concept / 2026 · Interactive prototype built</p>
-            <div className="mt-8 border border-border bg-background p-6">
-              <p className="eyebrow mb-4">Claim form / 01 · Structured claim data</p>
-              {[["Policyholder", "—"], ["Incident date", "—"], ["Loss type", "—"], ["Evidence", "Review"]].map(([k, v]) => <div key={k} className="flex justify-between border-b border-border py-2 text-sm"><span className="text-muted-foreground">{k}</span><b className="font-medium">{v}</b></div>)}
-              <p className="mt-4 text-sm italic text-accent">Confidence + missing-field review</p>
-            </div>
-            <p className="mt-6 font-display text-3xl">Assistance ≠ Decision</p>
-            <p className="eyebrow mt-4">Synthetic interface study · Not a live product</p>
-          </div>
-          <div className="p-8">
-            <p className="eyebrow">Independent Project | AI Product Prototype | 2026</p>
-            <p className="eyebrow mt-2">AI Product Management / Insurance Workflow Automation</p>
-            <h3 className="mt-4 text-5xl">AI Insurance Claims Assistant</h3>
-            <p className="mt-5 leading-relaxed text-muted-foreground">An AI-assisted claims workflow designed to extract structured information from claim documents, highlight missing fields, display extraction confidence, and answer policy questions using cited source passages.</p>
-            <p className="mt-5 font-mono text-[11px] text-accent">Interactive Floot prototype built · MVP capabilities unverified</p>
-            <div className="mt-5 flex flex-wrap gap-2">{["AI Products", "Business Analysis", "Product Management", "Insurance"].map((t) => <Chip key={t}>{t}</Chip>)}</div>
-            <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link to="/case-study" className="inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></Link>
-              <a href="https://sriharidasari.floot.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-foreground px-5 py-3 text-sm">View Prototype <ArrowUpRight size={14} /></a>
-            </div>
-            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes.</p>
-
-          </div>
-        </div>}
         {showClaims && <div className="mt-10 grid gap-10 border border-border md:grid-cols-2">
           <div className="relative bg-card p-8">
             <p className="eyebrow">Live prototype / 2026 · Synthetic-data MVP</p>
