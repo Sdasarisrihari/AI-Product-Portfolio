@@ -101,7 +101,7 @@ function Index() {
             {nav.map((n) => <a key={n} href={`#${n.toLowerCase()}`} className="hover:text-accent">{n}</a>)}
           </nav>
           <div className="flex items-center gap-6 text-sm">
-            <a href="mailto:sdasari1229@gmail.com?subject=Resume%20request" className="hidden items-center gap-1 sm:flex">Request Resume <ArrowUpRight size={14} /></a>
+            <a href={resumeAsset.url} download="Srihari_Dasari_Resume.pdf" className="hidden items-center gap-1 sm:flex">Download Resume <ArrowDownRight size={14} /></a>
             <a href="#projects" className="flex items-center gap-2 bg-primary px-4 py-3 text-xs text-primary-foreground">View Projects <ArrowDownRight size={14} /></a>
           </div>
         </div>
