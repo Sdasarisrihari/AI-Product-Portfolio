@@ -267,11 +267,6 @@ function Index() {
               <div key={s.t} className="bg-card p-8"><span className="font-mono text-xs text-accent">0{i + 1}</span><h3 className="mb-5 mt-2 text-3xl">{s.t}</h3><div className="flex flex-wrap gap-2">{s.i.map((x) => <Chip key={x}>{x}</Chip>)}</div></div>
             ))}
           </div>
-          <div className="mt-10 border border-dashed border-border p-8">
-            <p className="eyebrow mb-4">Case study concepts — not production experience</p>
-            <div className="flex flex-wrap gap-2">{["LLM use-case discovery", "Prompt engineering", "RAG / cited policy Q&A", "Document extraction", "Evaluation", "Human-in-the-loop design", "Responsible AI"].map((x) => <Chip key={x}>{x}</Chip>)}</div>
-            <p className="mt-5 text-xs text-muted-foreground">AI tools listed above reflect the stated requirements, analysis, and interactive prototype work. These concepts describe proposed product scope—not a deployed AI system.</p>
-          </div>
         </div>
       </section>
 
