@@ -192,8 +192,8 @@ function Index() {
       </section>
 
       <section id="projects" className="mx-auto max-w-[1200px] px-6 py-28">
-        <SectionHead n="03" label="Selected work" right="One flagship concept · No fabricated client work" title="Projects with a point of view." />
-        <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">A close look at an insurance workflow problem—and a deliberately bounded AI product response.</p>
+        <SectionHead n="03" label="Selected work" right="Two flagship concepts · No fabricated client work" title="Projects with a point of view." />
+        <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Close looks at insurance workflow problems—and deliberately bounded AI product responses.</p>
         <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)} className={`border px-3 py-1.5 text-xs transition-colors ${filter === f ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"}`}>{f}</button>)}</div>
         {showClaims && <div id="case-study" className="grid gap-10 border border-border md:grid-cols-2">
           <div className="relative bg-card p-8">
@@ -219,6 +219,41 @@ function Index() {
             </div>
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes.</p>
 
+          </div>
+        </div>}
+        {showClaims && <div className="mt-10 grid gap-10 border border-border md:grid-cols-2">
+          <div className="relative bg-card p-8">
+            <p className="eyebrow">Live prototype / 2026 · Synthetic-data MVP</p>
+            <div className="mt-8 border border-border bg-background p-6">
+              <p className="eyebrow mb-4">Review queue / 04 · Pending human review</p>
+              {[["Claim fields extracted", "2 missing → flagged"], ["Cited policy passage", "Grounded · verified"], ["Unsupported question", "Escalated for review"], ["VIN check digit", "Warning raised"]].map(([k, v]) => <div key={k} className="flex justify-between gap-4 border-b border-border py-2 text-sm"><span className="text-muted-foreground">{k}</span><b className="text-right font-medium">{v}</b></div>)}
+              <p className="mt-4 text-sm italic text-accent">Human verification stays central</p>
+            </div>
+            <p className="mt-6 font-display text-3xl">Assist the decision,<br />never make it</p>
+            <p className="eyebrow mt-4">Session-only demo · Not a live claims system</p>
+          </div>
+          <div className="p-8">
+            <p className="eyebrow">Independent AI Product Prototype | 2026</p>
+            <h3 className="mt-4 text-5xl">AI Claims Copilot</h3>
+            <p className="eyebrow mt-2">AI-Powered Insurance Claims Assistant</p>
+            <p className="mt-5 leading-relaxed text-muted-foreground">An AI-powered claims decision-support prototype that streamlines claim intake, extracts document-backed information, and routes missing or ambiguous details for human review.</p>
+            <ul className="mt-6 space-y-3 text-sm leading-relaxed text-muted-foreground">
+              {[
+                ["AI-powered extraction", "Google Gemini via secure server-side functions, with source-quote validation to flag missing information."],
+                ["Policy Q&A & grounding", "BM25 retrieval with citation verification, escalating when evidence is insufficient."],
+                ["Human-in-the-loop review", "A Review Queue for missing fields, ambiguous information, unsupported questions, and processing failures."],
+                ["API integration", "NHTSA vPIC vehicle lookup with input validation, error handling, and VIN check-digit warnings."],
+                ["Quality & safety", "Automated tests for evidence grounding, validation, API failure handling, and review state — 52/52 passing."],
+                ["Product thinking", "Documented architecture, QA results, a demo script, and a business-value evaluation plan."],
+              ].map(([t, d]) => <li key={t} className="flex gap-3"><span className="text-accent">—</span><span><b className="font-medium text-foreground">{t}:</b> {d}</span></li>)}
+            </ul>
+            <p className="mt-6 font-mono text-[11px] text-accent">Live demo deployed · Live policy citation re-verification and deployed QA pending</p>
+            <p className="eyebrow mb-3 mt-8">Tools & technologies</p>
+            <div className="flex flex-wrap gap-2">{["Lovable", "React", "TypeScript", "Google Gemini API", "BM25 Retrieval", "NHTSA vPIC API", "Server Functions", "Vitest", "AI Prototyping", "API Integration", "QA", "Human-in-the-Loop Design"].map((t) => <Chip key={t}>{t}</Chip>)}</div>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <a href="https://aiclaimscopilot.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Live Demo <ArrowUpRight size={14} /></a>
+            </div>
+            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">Scope: synthetic-data MVP; claims and review state are session-only. This is a prototype demonstrating the proposed workflow—not a production claims system, and no production claims data is used.</p>
           </div>
         </div>}
       </section>
