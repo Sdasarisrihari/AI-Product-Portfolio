@@ -18,7 +18,7 @@ export const Route = createFileRoute("/case-study")({
   component: CaseStudy,
 });
 
-const sections = [
+const sections: [string, string][] = [
   ["a", "Problem & objective"], ["b", "Users & scope"], ["c", "Implemented capabilities"],
   ["d", "User workflow"], ["e", "Product decisions"], ["f", "Architecture"],
   ["g", "QA & test results"], ["h", "Limitations & security"], ["i", "Evaluation plan"],
