@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowDown, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
