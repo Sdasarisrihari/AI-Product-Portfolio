@@ -1,6 +1,7 @@
 import qaReport from "@/assets/QA_REPORT.pdf.asset.json";
 import demoScript from "@/assets/DEMO_SCRIPT.pdf.asset.json";
 import architecture from "@/assets/ARCHITECTURE.pdf.asset.json";
+import architectureDiagram from "@/assets/ARCHITECTURE_DIAGRAM.pdf.asset.json";
 import businessValue from "@/assets/BUSINESS_VALUE_PLAN.pdf.asset.json";
 
 export const claimsProject = {
@@ -32,5 +33,6 @@ export const projectDocuments = [
   { id: "qa", title: "QA Report", description: "Test coverage, results, blockers, and known limitations.", asset: qaReport },
   { id: "demo", title: "Demonstration Script", description: "A five-minute walkthrough of extraction, evidence, policy Q&A, review, and VIN lookup.", asset: demoScript },
   { id: "architecture", title: "Architecture", description: "System components, data flow, external APIs, and safety rules.", asset: architecture },
+  { id: "architecture-diagram", title: "Architecture Diagram", description: "One-page visual of the browser UI, three server-function paths, external APIs, safety controls, and the human review flow.", asset: architectureDiagram },
   { id: "evaluation", title: "Business Value Evaluation Plan", description: "Hypotheses, metrics, methods, and decision criteria; no measured business results.", asset: businessValue },
 ];

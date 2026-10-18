@@ -1,7 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { evaluationPlan, reportedQA } from "@/lib/claims-project";
+import { evaluationPlan, projectDocuments, reportedQA } from "@/lib/claims-project";
 
 describe("Source-report results and planned evaluation", () => {
+  it("lists five supporting documents including the architecture diagram", () => {
+    expect(projectDocuments.map((doc) => doc.id)).toEqual(["qa", "demo", "architecture", "architecture-diagram", "evaluation"]);
+    const diagram = projectDocuments.find((doc) => doc.id === "architecture-diagram");
+    expect(diagram?.title).toBe("Architecture Diagram");
+    expect(diagram?.asset.content_type).toBe("application/pdf");
+  });
   it("retains the automated report counts", () => {
     expect(reportedQA.automated).toMatchObject({ passed: 52, failed: 0, files: 7, command: "bunx vitest run", build: "clean" });
   });
