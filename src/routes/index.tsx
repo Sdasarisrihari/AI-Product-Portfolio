@@ -213,8 +213,12 @@ function Index() {
             <p className="mt-5 leading-relaxed text-muted-foreground">An AI-assisted claims workflow designed to extract structured information from claim documents, highlight missing fields, display extraction confidence, and answer policy questions using cited source passages.</p>
             <p className="mt-5 font-mono text-[11px] text-accent">Interactive Floot prototype built · MVP capabilities unverified</p>
             <div className="mt-5 flex flex-wrap gap-2">{["AI Products", "Business Analysis", "Product Management", "Insurance"].map((t) => <Chip key={t}>{t}</Chip>)}</div>
-            <Link to="/case-study" className="mt-8 inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></Link>
-            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes. A stable public preview URL is not configured.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link to="/case-study" className="inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></Link>
+              <a href="https://sriharidasari.floot.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-foreground px-5 py-3 text-sm">View Prototype <ArrowUpRight size={14} /></a>
+            </div>
+            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes.</p>
+
           </div>
         </div>}
       </section>
