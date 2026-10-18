@@ -146,7 +146,7 @@
   }
 }
 
-@layer base { body { font-family: var(--font-sans); } h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: -0.02em; } html { scroll-behavior: smooth; } }
+@layer base { body { font-family: var(--font-sans); } h1,h2,h3 { font-family: var(--font-display); font-weight: 400; letter-spacing: 0; overflow-wrap: break-word; } html { scroll-behavior: smooth; } section[id] { scroll-margin-top: 110px; } }
 @utility eyebrow { font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted-foreground); }
 @keyframes spin-slow { to { transform: rotate(360deg); } }
 @utility orbit { animation: spin-slow 40s linear infinite; transform-origin: center; }

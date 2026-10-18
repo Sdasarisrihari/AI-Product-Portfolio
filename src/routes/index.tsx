@@ -1,7 +1,10 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowDown, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
+import { Button } from "@/components/ui/button";
+import { ProjectDocuments } from "@/components/project-documents";
+import { claimsProject } from "@/lib/claims-project";
 
 
 export const Route = createFileRoute("/")({
@@ -11,6 +14,8 @@ export const Route = createFileRoute("/")({
       { name: "description", content: "Business Analyst turning complex business problems into practical AI-powered products across P&C insurance and workflow automation." },
       { property: "og:title", content: "Srihari Dasari — AI Product Portfolio" },
       { property: "og:description", content: "Business analysis, P&C insurance, and applied AI prototyping." },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: Index,
@@ -91,13 +96,13 @@ function Index() {
   const showClaims = filter === "All" || ["AI Products", "Business Analysis", "Product Management", "Insurance"].includes(filter);
   return (
     <div className="min-h-screen bg-background text-foreground">
-      <div className="flex justify-between bg-primary px-10 py-2 font-mono text-[10px] tracking-[0.14em] text-primary-foreground">
+      <div className="flex flex-wrap justify-between gap-2 bg-primary px-6 py-2 font-mono text-[10px] text-primary-foreground">
         <span>PRODUCT THINKING / P&C INSURANCE / APPLIED AI</span><span>PORTFOLIO · 2026</span>
       </div>
       <header className="sticky top-0 z-20 border-b border-border bg-background/90 backdrop-blur">
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-6 py-4">
           <a href="#home" className="font-display text-3xl">SD<span className="text-accent">•</span></a>
-          <nav aria-label="Primary" className="hidden gap-10 text-sm md:flex">
+          <nav aria-label="Primary" className="hidden gap-8 text-sm lg:flex">
             {nav.map((n) => <a key={n} href={`#${n.toLowerCase()}`} className="hover:text-accent">{n}</a>)}
           </nav>
           <div className="flex items-center gap-6 text-sm">
@@ -105,7 +110,7 @@ function Index() {
             <a href="#projects" className="flex items-center gap-2 bg-primary px-4 py-3 text-xs text-primary-foreground">View Projects <ArrowDownRight size={14} /></a>
           </div>
         </div>
-        <nav aria-label="Sections" className="flex gap-5 overflow-x-auto border-t border-border px-6 py-2 text-xs md:hidden">
+        <nav aria-label="Sections" className="flex gap-5 overflow-x-auto border-t border-border px-6 py-2 text-xs lg:hidden">
           {nav.map((n) => <a key={n} href={`#${n.toLowerCase()}`}>{n}</a>)}
         </nav>
       </header>
@@ -114,9 +119,9 @@ function Index() {
         <div className="grid items-center gap-14 lg:grid-cols-[1.2fr_1fr]">
           <div>
             <p className="eyebrow mb-8 flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-accent" />Business Analyst · P&C Insurance · Applied AI</p>
-            <h1 className="text-6xl leading-[0.95] md:text-[88px]">I turn complex business problems into practical AI-powered products.</h1>
-            <p className="mt-8 max-w-xl text-muted-foreground leading-relaxed">Business Analyst specializing in P&C insurance, workflow optimization, and applied AI. I bridge business requirements, product thinking, and hands-on prototyping to build solutions that solve real operational problems.</p>
-            <div className="mt-8 flex items-center gap-6">
+            <h1 className="text-5xl leading-[0.95] sm:text-6xl md:text-[88px]">I turn complex business problems into practical AI-powered products.</h1>
+            <p className="mt-8 max-w-xl text-muted-foreground leading-relaxed">Business Analyst with P&C insurance experience and practical AI product-building skills. I translate business problems into requirements, define focused MVPs, and build evidence-grounded prototypes with human review and testable evaluation criteria.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-6">
               <a href="#projects" className="flex items-center gap-6 bg-primary px-5 py-4 text-sm text-primary-foreground">Explore My Work <ArrowDown size={16} /></a>
               <a href={resumeAsset.url} download="Srihari_Dasari_Resume.pdf" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Download Resume <ArrowDownRight size={14} /></a>
             </div>
@@ -157,7 +162,7 @@ function Index() {
           <div className="space-y-5 text-muted-foreground leading-relaxed">
             <p className="font-display text-2xl text-foreground">I work where operational needs meet product decisions and technical possibility.</p>
             <p>My experience spans P&C insurance and e-commerce. I’ve supported Guidewire PolicyCenter and commercial policy systems, translating stakeholder needs into requirements, user stories, acceptance criteria, process maps, and testable changes. I’ve also worked with REST/JSON APIs, SQL validation, UAT, Agile delivery, and partner integrations.</p>
-            <p>I’m building on that foundation through generative-AI-assisted analysis, product discovery, rapid prototyping, KPI definition, risk assessment, and human-review workflows.</p>
+            <p>I’m building on that foundation through AI Claims Copilot: making MVP scope trade-offs, integrating APIs and structured outputs, validating evidence, handling errors, and designing human-in-the-loop workflows. I document architecture, risks, limitations, and a measurable evaluation plan before claiming value.</p>
           </div>
           <div>
             {["Discover the real problem", "Translate needs into buildable requirements", "Map today and the better future", "Test value before scaling"].map((t, i) => (
@@ -192,25 +197,24 @@ function Index() {
       </section>
 
       <section id="projects" className="mx-auto max-w-[1200px] px-6 py-28">
-        <SectionHead n="03" label="Selected work" right="One flagship concept · No fabricated client work" title="Projects with a point of view." />
-        <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Close looks at insurance workflow problems—and deliberately bounded AI product responses.</p>
-        <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <button key={f} aria-pressed={filter === f} onClick={() => setFilter(f)} className={`border px-3 py-1.5 text-xs transition-colors ${filter === f ? "border-primary bg-primary text-primary-foreground" : "border-border hover:border-foreground"}`}>{f}</button>)}</div>
+        <SectionHead n="03" label="Selected work" right="One flagship prototype" title="AI Claims Copilot." />
+        <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Synthetic P&C Insurance Claims Decision-Support Prototype — independent portfolio work, grounded in documented implementation and QA.</p>
+        <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <Button key={f} size="sm" variant={filter === f ? "default" : "outline"} aria-pressed={filter === f} onClick={() => setFilter(f)} className="rounded-none">{f}</Button>)}</div>
         {showClaims && <div className="grid gap-10 border border-border md:grid-cols-2">
           <div className="relative bg-card p-8">
-            <p className="eyebrow">Live prototype / 2026 · Synthetic-data MVP</p>
+            <p className="eyebrow">Prototype / 2026 · Synthetic-data MVP</p>
             <div className="mt-8 border border-border bg-background p-6">
-              <p className="eyebrow mb-4">Review queue / 04 · Pending human review</p>
-              {[["Claim fields extracted", "2 missing → flagged"], ["Cited policy passage", "Grounded · verified"], ["Unsupported question", "Escalated for review"], ["VIN check digit", "Warning raised"]].map(([k, v]) => <div key={k} className="flex justify-between gap-4 border-b border-border py-2 text-sm"><span className="text-muted-foreground">{k}</span><b className="text-right font-medium">{v}</b></div>)}
+              <p className="eyebrow mb-4">Workflow overview · Human review</p>
+              {[["Extracted values", "Source evidence checked"], ["Policy passages", "Citation matching"], ["Uncertain information", "Escalated for review"], ["VIN decoding", "Validation + warnings"]].map(([k, v]) => <div key={k} className="flex flex-wrap justify-between gap-2 border-b border-border py-2 text-sm"><span className="text-muted-foreground">{k}</span><b className="font-medium">{v}</b></div>)}
               <p className="mt-4 text-sm italic text-accent">Human verification stays central</p>
             </div>
             <p className="mt-6 font-display text-3xl">Assist the decision,<br />never make it</p>
             <p className="eyebrow mt-4">Session-only demo · Not a live claims system</p>
           </div>
           <div className="p-8">
-            <p className="eyebrow">Independent AI Product Prototype | 2026</p>
-            <h3 className="mt-4 text-5xl">AI Claims Copilot</h3>
-            <p className="eyebrow mt-2">AI-Powered Insurance Claims Assistant</p>
-            <p className="mt-5 leading-relaxed text-muted-foreground">An AI-powered claims decision-support prototype that streamlines claim intake, extracts document-backed information, and routes missing or ambiguous details for human review.</p>
+            <p className="eyebrow">AI Product Development | P&C Insurance | 2026</p>
+            <h3 className="mt-4 text-4xl sm:text-5xl">{claimsProject.name}</h3>
+            <p className="mt-5 leading-relaxed text-muted-foreground">{claimsProject.description}</p>
             <ul className="mt-6 space-y-3 text-sm leading-relaxed text-muted-foreground">
               {[
                 ["AI-powered extraction", "Google Gemini via secure server-side functions, with source-quote validation to flag missing information."],
@@ -221,12 +225,14 @@ function Index() {
                 ["Product thinking", "Documented architecture, QA results, a demo script, and a business-value evaluation plan."],
               ].map(([t, d]) => <li key={t} className="flex gap-3"><span className="text-accent">—</span><span><b className="font-medium text-foreground">{t}:</b> {d}</span></li>)}
             </ul>
-            <p className="mt-6 font-mono text-[11px] text-accent">Live demo deployed · Live policy citation re-verification and deployed QA pending</p>
+            <p className="mt-6 border-l-2 border-accent pl-3 font-mono text-[11px] text-accent">Prototype status: {claimsProject.status}. Two live policy-answer checks were blocked in the QA report.</p>
             <p className="eyebrow mb-3 mt-8">Tools & technologies</p>
             <div className="flex flex-wrap gap-2">{["Lovable", "React", "TypeScript", "Google Gemini API", "BM25 Retrieval", "NHTSA vPIC API", "Server Functions", "Vitest", "AI Prototyping", "API Integration", "QA", "Human-in-the-Loop Design"].map((t) => <Chip key={t}>{t}</Chip>)}</div>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href="https://aiclaimscopilot.vercel.app/" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Live Demo <ArrowUpRight size={14} /></a>
+              <Button asChild className="rounded-none"><Link to="/case-study">View Case Study <ArrowUpRight size={14} /></Link></Button>
+              <Button asChild variant="outline" className="rounded-none"><a href={claimsProject.demoUrl} target="_blank" rel="noopener noreferrer">View Live Demo <ArrowUpRight size={14} /></a></Button>
             </div>
+            <div className="mt-6 border-t border-border pt-5"><p className="eyebrow mb-4">Supporting documents</p><ProjectDocuments compact /></div>
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">Scope: synthetic-data MVP; claims and review state are session-only. This is a prototype demonstrating the proposed workflow—not a production claims system, and no production claims data is used.</p>
           </div>
         </div>}
@@ -234,8 +240,8 @@ function Index() {
 
       <section id="skills" className="border-t border-border bg-card">
         <div className="mx-auto max-w-[1200px] px-6 py-28">
-          <SectionHead n="04" label="Skills" right="Experience + concepts" title="Tools for making ambiguity actionable." />
-          <p className="-mt-8 mb-14 max-w-2xl text-muted-foreground">Resume-backed skills and tools are shown separately from the applied-AI concepts in the claims-assistant case study.</p>
+          <SectionHead n="04" label="Skills" right="Experience + applied AI" title="Tools for making ambiguity actionable." />
+          <p className="-mt-8 mb-14 max-w-2xl text-muted-foreground">Business analysis and insurance experience, complemented by practical AI product-building tools.</p>
           <div className="grid gap-px bg-border md:grid-cols-2">
             {skills.map((s, i) => (
               <div key={s.t} className="bg-card p-8"><span className="font-mono text-xs text-accent">0{i + 1}</span><h3 className="mb-5 mt-2 text-3xl">{s.t}</h3><div className="flex flex-wrap gap-2">{s.i.map((x) => <Chip key={x}>{x}</Chip>)}</div></div>
