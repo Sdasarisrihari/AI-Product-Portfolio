@@ -66,7 +66,8 @@ const skills = [
   { t: "Business Analysis", i: ["Requirements gathering", "BRD / FRD / FRS", "User stories & acceptance criteria", "AS-IS / TO-BE process mapping", "Gap & data mapping", "UAT & defect management"] },
   { t: "Product & Project Management", i: ["Discovery & problem framing", "MVP definition", "Backlog & prioritization", "Roadmaps & dependencies", "Risk management", "KPI definition", "Agile / Scrum delivery"] },
   { t: "Insurance & Technology", i: ["P&C insurance", "Guidewire PolicyCenter", "QuickSolver / QS4", "CGI Ratabase", "SQL", "REST / JSON APIs", "Postman · SoapUI · Swagger", "Power BI · Tableau · Google Analytics"] },
-  { t: "Applied AI", i: ["ChatGPT — requirements & analysis support", "Floot — interactive claims prototype", "Lovable — prototype exploration", "Claude — AI project tool"] },
+  { t: "Applied AI", i: ["LLM", "RAG", "Lovable", "ChatGPT", "Claude", "NotebookLM", "Replit", "Floot AI"] },
+
 ];
 
 const Chip = ({ children }: { children: string }) => (
