@@ -245,7 +245,7 @@ function Index() {
           <div className="mb-10 flex justify-between border-b border-primary-foreground/20 pb-4 font-mono text-[11px] tracking-[0.14em] opacity-70"><span>05 — CONTACT</span><span>BANGALORE, INDIA</span></div>
           <h2 className="text-5xl leading-[1.02] md:text-8xl">Have a business problem<br />worth solving with AI? <em>Let’s talk.</em></h2>
           <p className="mt-12 font-mono text-[11px] tracking-[0.14em] opacity-70">GET IN TOUCH</p>
-          <p className="mt-3 max-w-xl opacity-80">For conversations about business analysis, product delivery, or applied AI, email me at <a className="underline" href="mailto:sdasari1229@gmail.com">sdasari1229@gmail.com</a>.</p>
+
           <a href="mailto:sdasari1229@gmail.com" className="mt-8 inline-flex items-center gap-3 bg-background px-6 py-4 text-sm text-foreground">Email <ArrowUpRight size={14} /></a>
         </div>
       </section>
