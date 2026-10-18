@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { evaluationPlan, reportedQA } from "@/lib/claims-project";
+import { evaluationPlan, projectDocuments, reportedQA } from "@/lib/claims-project";
 
 describe("Source-report results and planned evaluation", () => {
   it("retains the automated report counts", () => {
