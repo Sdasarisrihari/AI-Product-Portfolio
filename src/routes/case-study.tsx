@@ -1,5 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUpRight } from "lucide-react";
+
 
 export const Route = createFileRoute("/case-study")({
   head: () => ({
@@ -81,7 +82,9 @@ function CaseStudy() {
         <h1 className="mt-6 text-6xl leading-[0.95] md:text-8xl">AI Insurance Claims Assistant</h1>
         <p className="mt-8 max-w-3xl text-lg text-muted-foreground">An AI-assisted claims workflow designed to extract structured information from claim documents, highlight missing fields, display extraction confidence, and answer policy questions using cited source passages.</p>
         <div className="mt-6 flex flex-wrap gap-2"><Tag>AI Product Management</Tag><Tag>Insurance Workflow Automation</Tag><Tag>Status: prototype in progress</Tag></div>
-        <p className="mt-6 border-l-2 border-accent pl-4 text-sm text-muted-foreground">An interactive Floot prototype has been built to demonstrate the proposed experience. No public preview URL is configured, and no production claims capability or measured outcome is claimed.</p>
+        <p className="mt-6 border-l-2 border-accent pl-4 text-sm text-muted-foreground">An interactive Floot prototype has been built to demonstrate the proposed experience. No production claims capability or measured outcome is claimed.</p>
+        <a href="https://sriharidasari.floot.app" target="_blank" rel="noopener noreferrer" className="mt-6 inline-flex items-center gap-3 border border-foreground px-5 py-3 text-sm">View Prototype <ArrowUpRight size={14} /></a>
+
 
         <div className="mt-16">
           <Section n="01" title="Problem">

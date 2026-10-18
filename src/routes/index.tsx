@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { ArrowDown, ArrowUpRight, ArrowDownRight } from "lucide-react";
+import resumeAsset from "@/assets/resume.pdf.asset.json";
+
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -64,7 +66,8 @@ const skills = [
   { t: "Business Analysis", i: ["Requirements gathering", "BRD / FRD / FRS", "User stories & acceptance criteria", "AS-IS / TO-BE process mapping", "Gap & data mapping", "UAT & defect management"] },
   { t: "Product & Project Management", i: ["Discovery & problem framing", "MVP definition", "Backlog & prioritization", "Roadmaps & dependencies", "Risk management", "KPI definition", "Agile / Scrum delivery"] },
   { t: "Insurance & Technology", i: ["P&C insurance", "Guidewire PolicyCenter", "QuickSolver / QS4", "CGI Ratabase", "SQL", "REST / JSON APIs", "Postman · SoapUI · Swagger", "Power BI · Tableau · Google Analytics"] },
-  { t: "Applied AI", i: ["ChatGPT — requirements & analysis support", "Floot — interactive claims prototype", "Lovable — prototype exploration", "Claude — AI project tool"] },
+  { t: "Applied AI", i: ["LLM", "RAG", "Lovable", "ChatGPT", "Claude", "NotebookLM", "Replit", "Floot AI"] },
+
 ];
 
 const Chip = ({ children }: { children: string }) => (
@@ -98,7 +101,7 @@ function Index() {
             {nav.map((n) => <a key={n} href={`#${n.toLowerCase()}`} className="hover:text-accent">{n}</a>)}
           </nav>
           <div className="flex items-center gap-6 text-sm">
-            <a href="mailto:sdasari1229@gmail.com?subject=Resume%20request" className="hidden items-center gap-1 sm:flex">Request Resume <ArrowUpRight size={14} /></a>
+            <a href={resumeAsset.url} download="Srihari_Dasari_Resume.pdf" className="hidden items-center gap-1 sm:flex">Download Resume <ArrowDownRight size={14} /></a>
             <a href="#projects" className="flex items-center gap-2 bg-primary px-4 py-3 text-xs text-primary-foreground">View Projects <ArrowDownRight size={14} /></a>
           </div>
         </div>
@@ -115,7 +118,7 @@ function Index() {
             <p className="mt-8 max-w-xl text-muted-foreground leading-relaxed">Business Analyst specializing in P&C insurance, workflow optimization, and applied AI. I bridge business requirements, product thinking, and hands-on prototyping to build solutions that solve real operational problems.</p>
             <div className="mt-8 flex items-center gap-6">
               <a href="#projects" className="flex items-center gap-6 bg-primary px-5 py-4 text-sm text-primary-foreground">Explore My Work <ArrowDown size={16} /></a>
-              <a href="mailto:sdasari1229@gmail.com?subject=Resume%20request" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Request Resume <ArrowUpRight size={14} /></a>
+              <a href={resumeAsset.url} download="Srihari_Dasari_Resume.pdf" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Download Resume <ArrowDownRight size={14} /></a>
             </div>
           </div>
           <div className="relative aspect-[6/5] border border-border bg-card">
@@ -210,8 +213,12 @@ function Index() {
             <p className="mt-5 leading-relaxed text-muted-foreground">An AI-assisted claims workflow designed to extract structured information from claim documents, highlight missing fields, display extraction confidence, and answer policy questions using cited source passages.</p>
             <p className="mt-5 font-mono text-[11px] text-accent">Interactive Floot prototype built · MVP capabilities unverified</p>
             <div className="mt-5 flex flex-wrap gap-2">{["AI Products", "Business Analysis", "Product Management", "Insurance"].map((t) => <Chip key={t}>{t}</Chip>)}</div>
-            <Link to="/case-study" className="mt-8 inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></Link>
-            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes. A stable public preview URL is not configured.</p>
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Link to="/case-study" className="inline-flex items-center gap-3 bg-primary px-5 py-3 text-sm text-primary-foreground">View Case Study <ArrowUpRight size={14} /></Link>
+              <a href="https://sriharidasari.floot.app" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-3 border border-foreground px-5 py-3 text-sm">View Prototype <ArrowUpRight size={14} /></a>
+            </div>
+            <p className="mt-6 text-xs leading-relaxed text-muted-foreground">The resume records an interactive Floot prototype built to demonstrate the proposed solution and user experience. It does not claim a production claims system or measured operational outcomes.</p>
+
           </div>
         </div>}
       </section>
@@ -238,7 +245,7 @@ function Index() {
           <div className="mb-10 flex justify-between border-b border-primary-foreground/20 pb-4 font-mono text-[11px] tracking-[0.14em] opacity-70"><span>05 — CONTACT</span><span>BANGALORE, INDIA</span></div>
           <h2 className="text-5xl leading-[1.02] md:text-8xl">Have a business problem<br />worth solving with AI? <em>Let’s talk.</em></h2>
           <p className="mt-12 font-mono text-[11px] tracking-[0.14em] opacity-70">GET IN TOUCH</p>
-          <p className="mt-3 max-w-xl opacity-80">For conversations about business analysis, product delivery, or applied AI, email me at <a className="underline" href="mailto:sdasari1229@gmail.com">sdasari1229@gmail.com</a>.</p>
+
           <a href="mailto:sdasari1229@gmail.com" className="mt-8 inline-flex items-center gap-3 bg-background px-6 py-4 text-sm text-foreground">Email <ArrowUpRight size={14} /></a>
         </div>
       </section>
