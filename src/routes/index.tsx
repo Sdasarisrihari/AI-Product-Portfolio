@@ -118,7 +118,7 @@ function Index() {
             <p className="mt-8 max-w-xl text-muted-foreground leading-relaxed">Business Analyst specializing in P&C insurance, workflow optimization, and applied AI. I bridge business requirements, product thinking, and hands-on prototyping to build solutions that solve real operational problems.</p>
             <div className="mt-8 flex items-center gap-6">
               <a href="#projects" className="flex items-center gap-6 bg-primary px-5 py-4 text-sm text-primary-foreground">Explore My Work <ArrowDown size={16} /></a>
-              <a href="mailto:sdasari1229@gmail.com?subject=Resume%20request" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Request Resume <ArrowUpRight size={14} /></a>
+              <a href={resumeAsset.url} download="Srihari_Dasari_Resume.pdf" className="flex items-center gap-2 border-b border-foreground pb-1 text-sm">Download Resume <ArrowDownRight size={14} /></a>
             </div>
           </div>
           <div className="relative aspect-[6/5] border border-border bg-card">
