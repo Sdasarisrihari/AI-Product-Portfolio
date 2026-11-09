@@ -4,6 +4,7 @@ import { ArrowDown, ArrowUpRight, ArrowDownRight } from "lucide-react";
 import resumeAsset from "@/assets/resume.pdf.asset.json";
 import { Button } from "@/components/ui/button";
 import { ProjectDocuments } from "@/components/project-documents";
+import { FeedbackProjectCard } from "@/components/feedback-project-card";
 import { claimsProject } from "@/lib/claims-project";
 
 
@@ -94,6 +95,7 @@ function SectionHead({ n, label, right, title }: { n: string; label: string; rig
 function Index() {
   const [filter, setFilter] = useState("All");
   const showClaims = filter === "All" || ["AI Products", "Business Analysis", "Product Management", "Insurance"].includes(filter);
+  const showFeedback = filter === "All" || ["AI Products", "Business Analysis", "Product Management"].includes(filter);
   return (
     <div className="min-h-screen bg-background text-foreground">
       <div className="flex flex-wrap justify-between gap-2 bg-primary px-6 py-2 font-mono text-[10px] text-primary-foreground">
@@ -197,8 +199,8 @@ function Index() {
       </section>
 
       <section id="projects" className="mx-auto max-w-[1200px] px-6 py-28">
-        <SectionHead n="03" label="Selected work" right="One flagship prototype" title="AI Claims Copilot." />
-        <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Synthetic P&C Insurance Claims Decision-Support Prototype — independent portfolio work, grounded in documented implementation and QA.</p>
+        <SectionHead n="03" label="AI projects" right="Two independent prototypes" title="Applied AI, grounded in product work." />
+        <p className="-mt-8 mb-10 max-w-2xl text-muted-foreground">Independent prototypes exploring evidence-grounded assistance, product discovery, and human-reviewed workflows. Project status and evaluation limits are stated separately.</p>
         <div className="mb-8 flex flex-wrap gap-2">{["All", "AI Products", "Business Analysis", "Product Management", "Insurance"].map((f) => <Button key={f} size="sm" variant={filter === f ? "default" : "outline"} aria-pressed={filter === f} onClick={() => setFilter(f)} className="rounded-none">{f}</Button>)}</div>
         {showClaims && <div className="grid gap-10 border border-border md:grid-cols-2">
           <div className="relative bg-card p-8">
@@ -236,6 +238,7 @@ function Index() {
             <p className="mt-6 text-xs leading-relaxed text-muted-foreground">Scope: synthetic-data MVP; claims and review state are session-only. This is a prototype demonstrating the proposed workflow—not a production claims system, and no production claims data is used.</p>
           </div>
         </div>}
+        {showFeedback && <FeedbackProjectCard />}
       </section>
 
       <section id="skills" className="border-t border-border bg-card">
