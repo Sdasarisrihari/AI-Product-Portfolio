@@ -6,3 +6,4 @@
 - [x] Add functional supporting PDF actions; all four original PDFs downloaded and returned valid PDF content.
 - [x] Test navigation, PDF downloads, QA values, desktop/mobile layouts, and evaluation framing.
 - [x] Report remaining live project verification tasks without claiming deployment QA: live policy citation re-verification, deployed QA, and private source-code inspection remain outside this portfolio's verification.
+- [x] Add Feedback-to-Product AI to the AI projects section, link its verified demo and project documentation, and verify both project cards.
